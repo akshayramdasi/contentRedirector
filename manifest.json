@@ -1,0 +1,27 @@
+{
+  "name": "content blocker",
+  "description": "Redirect The web page to a different host",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {"scripts":["background.js"]},
+  "permissions": [
+    "webRequest",
+    "*://*/*",
+    // "*://facebook.com/*",
+    // "*://www.facebook.com/*",
+    "webRequestBlocking"
+  ],
+  "browser_action": {
+         
+          "default_title": "Content Redirect",      
+          "default_popup": "popup.html"        
+        },
+  "content_scripts": [ 
+    {
+        "matches": ["https://*/*", "http://*/*"],
+        "js": ["content_script.js"],
+        "run_at": "document_end"
+    }
+]
+     
+}
