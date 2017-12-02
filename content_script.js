@@ -5,11 +5,11 @@ $('#buttonForBlocking').click(function(event) {
 	
 });
 
-//Faulty code
+//checking this code for some bugs
 chrome.runtime.sendMessage("ping");
 
 chrome.runtime.onMessage.addListener(function(response,sender,sendResponse) {
-  var URLStorageRes = response;
+ var URLStorageRes = response;
   
 $("#newBlockingList").remove();
 $("#blockedList").append("<ul id='newBlockingList'></ul>");

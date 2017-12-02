@@ -35,4 +35,3 @@ chrome.runtime.onMessage.addListener(function(response, sender, sendResponse) {
     chrome.runtime.sendMessage(URLStorage);
     
 });
-
