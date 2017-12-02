@@ -5,7 +5,7 @@ $('#buttonForBlocking').click(function(event) {
 	
 });
 
-
+//Faulty code
 chrome.runtime.sendMessage("ping");
 
 chrome.runtime.onMessage.addListener(function(response,sender,sendResponse) {
