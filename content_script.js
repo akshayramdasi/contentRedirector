@@ -7,7 +7,7 @@ $('#buttonForBlocking').click(function(event) {
 			chrome.runtime.sendMessage(enterdDomainName);
 	}
 	else{
-		alert("Enter valid domain name";)
+		alert("Enter valid domain name");
 	}
 	
 });
