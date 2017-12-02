@@ -30,8 +30,10 @@ chrome.runtime.onMessage.addListener(function(response, sender, sendResponse) {
     if(response === "ping") { 
       chrome.runtime.sendMessage(URLStorage);
     }else{
-      URLStorage.push(response);
-      chrome.runtime.sendMessage(URLStorage);     
+
+
+    	URLStorage.push(response);
+    	chrome.runtime.sendMessage(URLStorage);    	
     }
     
 });
