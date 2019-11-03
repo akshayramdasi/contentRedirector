@@ -1,4 +1,5 @@
 
+
 var URLStorage = ["facebook.com","gmail.com","twitter.com"];
 
 function interceptRequest(request)  
@@ -10,7 +11,7 @@ function interceptRequest(request)
       for(i=0; i<=(URLStorage.length); i++){
       if(request.url.indexOf(URLStorage[i]) > -1)
       {
-        URLStorage = request.url;
+        //URLStorage = request.url;
         return {redirectUrl: chrome.extension.getURL("confirmation.html")};
       }
       }
@@ -26,13 +27,13 @@ chrome.runtime.onMessage.addListener(function(response, sender, sendResponse) {
  
   // body...
     
-    if(response === "ping") {
-    
-    chrome.runtime.sendMessage(URLStorage);
+    if(response === "ping") { 
+      chrome.runtime.sendMessage(URLStorage);
+    }else{
 
-  }
-    URLStorage.push(response);
-    chrome.runtime.sendMessage(URLStorage);
+
+    	URLStorage.push(response);
+    	chrome.runtime.sendMessage(URLStorage);    	
+    }
     
 });
-
